@@ -74,7 +74,7 @@ const onSearchFormSubmit = async event => {
         }
 
         if (data.totalHits === 0) {
-            Notiflix.Notify.failure("Ото запит!!! 😡 В нас таких картинок немає :((");
+            Notiflix.Notify.failure("Ото запит!!!  В нас таких картинок немає :(");
             event.target.elements.searchQuery.value = "";
             galleryRef.innerHTML = "";
             return;
@@ -85,7 +85,7 @@ const onSearchFormSubmit = async event => {
             lightbox.refresh();
             return;
         }
-        Notiflix.Notify.info(`Урррра - є контакт, ми знайшли ${data.totalHits} фоточок :))`);
+        Notiflix.Notify.info(`Урррра - є контакт, ми знайшли ${data.totalHits} картинок :)`);
         galleryRef.innerHTML = makeGalleryCard(data.hits);
         lightbox.refresh();
         observer.observe(scrollDiv);
